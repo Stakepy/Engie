@@ -18,7 +18,7 @@ def start_command(message):
     def bot_message(message):
         if message.chat.type == 'private':
             if message.text == 'Розклад дзвінків 🛎️':
-                bot.send_message(message.chat.id, ' \nРозклад дзвінків на понеділок:  \n1) 8.45   \n2) 9.10   \n3) 10.00  \n4) 11.00   \n5) 12.00   \n6) 13.00   \n7) 14.00   \n8) 15.00     \nРозклад дзвінків вівторок-п`ятниця:  \n1) 8.50   \n2) 10.00   \n3) 11.00  \n4) 12.00   \n5) 13.00   \n6) 14.00   \n7) 15.00   \n8) 16.00')
+                bot.send_message(message.chat.id, ' \nРозклад дзвінків на понеділок:  \n1) 8.45   \n2) 9:10 - 9:55   \n3) 10:00 - 10:45  \n4) 11:00 - 11:45   \n5) 12:00 - 12:45   \n6) 13:00 - 13:45   \n7) 14:00 - 14:45   \n8) 15:00 - 15:45     \nРозклад дзвінків вівторок-п`ятниця:  \n1) 8:50 - 9:35   \n2) 10:00 - 10:45   \n3) 11:00 - 11:45  \n4) 12:00 - 12:45   \n5) 13:00 - 13:45   \n6) 14:00 - 14:45   \n7) 15:00 - 15:45   \n8) 16:00 - 16:45')
             elif message.text == 'Розклад уроків 📝':
                 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
                 item3 = types.KeyboardButton('Понеділок')
@@ -27,7 +27,8 @@ def start_command(message):
                 item6 = types.KeyboardButton('Четвер')
                 item7 = types.KeyboardButton('Пятниця')
                 back = types.KeyboardButton('⬅️Назад')
-                markup.add(item3, item4, item5, item6, item7, back)
+                start2 = types.KeyboardButton('/restart')
+                markup.add(item3, item4, item5, item6, item7, back, start2)
                 bot.send_message(message.chat.id, 'Розклад уроків 📝', reply_markup = markup )
             elif message.text == 'Понеділок':
                 bot.send_message(message.chat.id,
