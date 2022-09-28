@@ -1,5 +1,14 @@
 import telebot
+import sys
+import os
+import time
 from telebot import types
+
+def restart():
+    print("argv: " , sys.argv)
+    print("sys.executable: " , sys.executable)
+    print("restart now!")
+    os.execv(sys.executable, ['python'] + sys.argv)
 
 bot = telebot.TeleBot('5513608925:AAGZtxWBqbCy1XJ5NdKBuIzlOsNdDoDdsnA')
 
@@ -9,8 +18,9 @@ def start_command(message):
     item2 = types.KeyboardButton('Розклад уроків 📝')
     item3 = types.KeyboardButton('Розклад дзвінків 🛎️')
     item33 = types.KeyboardButton('Книжки 📚')
+    item45 = types.KeyboardButton('Новини ⚠️')
     item6 = types.KeyboardButton('/start')
-    markup.add(item2, item3, item6, item33 )
+    markup.add(item2, item3, item6, item33, item45 )
     bot.send_message(message.chat.id,
                      'Привіт, {0.first_name}!'.format(message.from_user), reply_markup = markup)
 
@@ -86,9 +96,13 @@ def start_command(message):
                 item2 = types.KeyboardButton('Розклад уроків 📝')
                 item3 = types.KeyboardButton('Розклад дзвінків 🛎️')
                 item33 = types.KeyboardButton('Книжки 📚')
+                item45 = types.KeyboardButton('Новини ⚠️')
                 item6 = types.KeyboardButton('/start')
-                markup.add(item2, item3, item6, item33 )
+                markup.add(item2, item3, item6, item33, item45 )
                 bot.send_message(message.chat.id, '⬅️Назад' , reply_markup = markup)
+
+            elif message.text == 'Новини ⚠️':
+                bot.send_message(message.chat.id, '\nОновлення бота: \nДодано посилання до Атласу по географії у пункті "Книжки" ')
 
             if message.text == 'Книжки 📚':
                     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -112,23 +126,24 @@ def start_command(message):
                     back2 = types.KeyboardButton('⬅️  Назад')
                     start2 = types.KeyboardButton('/restart')
                     markup.add(item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, back2, start2)
-                    bot.send_message(message.chat.id, '\n1.Алгебра'
-                                                      '\n2.Англійська мова'
-                                                      '\n3.Біологія і Екологія'
-                                                      '\n4Всесвітня історія'
-                                                      '\n5.Географія'
-                                                      '\n6.Геометрія'
-                                                      '\n7.Громадянська освіта'
-                                                      '\n8.Зарубіжна література'
-                                                      '\n9.Захист України'
-                                                      '\n10.Інформатика'
-                                                      '\n11.Історія України'
-                                                      '\n12.Мистецтво'
-                                                      '\n13.Українська література'
-                                                      '\n14.Українська мова'
-                                                      '\n15.Фізика'
-                                                      '\n16.Фінансова грамотність'
-                                                      '\n17.Хімія'
+                    bot.send_message(message.chat.id, '\n1.Алгебра ✅'
+                                                      '\n2.Англійська мова ✅'
+                                                      '\n3.Біологія і Екологія ✅'
+                                                      '\n4.Всесвітня історія ✅'
+                                                      '\n5.Географія ✅'
+                                                      '\n6.Геометрія ✅'
+                                                      '\n7.Громадянська освіта ✅'
+                                                      '\n8.Зарубіжна література ✅'
+                                                      '\n9.Захист України ✅'
+                                                      '\n10.Інформатика ✅'
+                                                      '\n11.Історія України ✅'
+                                                      '\n12.Мистецтво ✅'
+                                                      '\n13.Українська література ✅'
+                                                      '\n14.Українська мова ✅'
+                                                      '\n15.Фізика ✅'
+                                                      '\n16.Фінансова грамотність ✅'
+                                                      '\n17.Хімія ✅'
+                                                      '\n18.Географія Атлас - https://new.osvitanet.com.ua/heohrafiia/heohrafiia-10-klas/'
                                                       ,
                                      reply_markup=markup)
             elif message.text == '⬅️  Назад':
@@ -136,17 +151,18 @@ def start_command(message):
                     item2 = types.KeyboardButton('Розклад уроків 📝')
                     item3 = types.KeyboardButton('Розклад дзвінків 🛎️')
                     item33 = types.KeyboardButton('Книжки 📚')
+                    item45 = types.KeyboardButton('Новини ⚠️')
                     item6 = types.KeyboardButton('/start')
-                    markup.add(item2, item3, item6, item33 )
+                    markup.add(item2, item3, item6, item33, item45 )
                     bot.send_message(message.chat.id, '⬅️  Назад', reply_markup=markup)
             elif message.text == '1':
                 with open("Алгебра.pdf", "rb") as file:
                     f = file.read()
                     bot.send_document(message.chat.id, open(r'Алгебра.pdf' , 'rb' ))
-         #   elif message.text == '2':
-          #     with open("", "rb") as file:
-           #        f = file.read()
-            #       bot.send_document(message.chat.id, open(r'Алгебра.pdf' , 'rb' ))
+            elif message.text == '2':
+               with open("Англійська мова.pdf", "rb") as file:
+                   f = file.read()
+                   bot.send_document(message.chat.id, open(r'Англійська мова.pdf' , 'rb' ))
             elif message.text == '3':
                 with open("Біологія і Екологія.pdf", "rb") as file:
                     f = file.read()
@@ -159,18 +175,18 @@ def start_command(message):
                 with open("Географія.pdf", "rb") as file:
                     f = file.read()
                     bot.send_document(message.chat.id, open(r'Географія.pdf', 'rb'))
-           # elif message.text == '6':
-            #    with open("", "rb") as file:
-             #       f = file.read()
-              #      bot.send_document(message.chat.id, open(r'', 'rb'))
+            elif message.text == '6':
+                with open("Геометрія.pdf", "rb") as file:
+                    f = file.read()
+                    bot.send_document(message.chat.id, open(r'Геометрія.pdf', 'rb'))
             elif message.text == '7':
                 with open("Громадянська освіта.pdf", "rb") as file:
                     f = file.read()
                     bot.send_document(message.chat.id, open(r'Громадянська освіта.pdf', 'rb'))
-           # elif message.text == '8':
-            #    with open("", "rb") as file:
-             #       f = file.read()
-              #      bot.send_document(message.chat.id, open(r'', 'rb'))
+            elif message.text == '8':
+                with open("Зарубіжна література.pdf", "rb") as file:
+                    f = file.read()
+                    bot.send_document(message.chat.id, open(r'Зарубіжна література.pdf', 'rb'))
             elif message.text == '9':
                 with open("Захист Вітчизни.pdf", "rb") as file:
                     f = file.read()
@@ -183,10 +199,10 @@ def start_command(message):
                 with open("Історія України.pdf", "rb") as file:
                     f = file.read()
                     bot.send_document(message.chat.id, open(r'Історія України.pdf', 'rb'))
-          #  elif message.text == '12':
-             #   with open("", "rb") as file:
-                #    f = file.read()
-                  #  bot.send_document(message.chat.id, open(r'', 'rb'))
+            elif message.text == '12':
+                with open("Мистецтво.pdf", "rb") as file:
+                    f = file.read()
+                    bot.send_document(message.chat.id, open(r'Мистецтво.pdf', 'rb'))
             elif message.text == '13':
                 with open("Українська література.pdf", "rb") as file:
                     f = file.read()
