@@ -43,54 +43,95 @@ def start_command(message):
             elif message.text == 'Понеділок':
                 bot.send_message(message.chat.id,
                                  '\n1.Година спілкування'
+                                 '\nhttps://lms.human.ua/app/group/505956/feed'
                                  '\n2.Хімія'
+                                 '\nhttps://lms.human.ua/app/group/422483/feed'
                                  '\n3.Історія України/географія'
+                                 '\nІсторія України - https://lms.human.ua/app/group/416074/feed'
+                                 '\nГеографія - https://lms.human.ua/app/group/422409/feed'
                                  '\n4.Мистецтво'
+                                 '\nhttps://lms.human.ua/app/group/422313/feed'
                                  '\n5.Хімія/захист України'
+                                 '\nХімія - https://lms.human.ua/app/group/422483/feed'
+                                 '\nЗахист України - https://lms.human.ua/app/group/422263/feed'
                                  '\n6.Українська мова'
-                                 '\n7.Математика'
-                                 '\n8.Математика')
+                                 '\nhttps://lms.human.ua/app/group/415876/feed'
+                                 '\n7.Алгебра'
+                                 '\nhttps://lms.human.ua/app/group/462027/feed'
+                                 '\n8.Алгебра'
+                                 '\nhttps://lms.human.ua/app/group/462027/feed')
             elif message.text == 'Вівторок':
                 bot.send_message(message.chat.id,
-                                 '\n1.Математика'
+                                 '\n1.Геометрія'
+                                 '\nhttps://lms.human.ua/app/group/462028/feed'
                                  '\n2.Англійська мова'
+                                 '\nhttps://lms.human.ua/app/group/411693/feed'
                                  '\n3.Українська література'
+                                 '\nhttps://lms.human.ua/app/group/415855/feed'
                                  '\n4.Фізична культура'
-                                 '\n5.Математика'
+                                 '\nhttps://lms.human.ua/app/group/422258/feed'
+                                 '\n5.Геометрія'
+                                 '\nhttps://lms.human.ua/app/group/462028/feed'
                                  '\n6.Фізика'
+                                 '\nhttps://lms.human.ua/app/group/422423/feed'
                                  '\n7.Історія України'
-                                 '\n8. - ')
+                                 '\nhttps://lms.human.ua/app/group/416074/feed'
+                                 '\n8.Українознавство'
+                                 '\nhttps://lms.human.ua/app/group/554629/course/484766')
 
             elif message.text == 'Середа':
                 bot.send_message(message.chat.id,
                                  '\n1.Англійська мова'
+                                 '\nhttps://lms.human.ua/app/group/411693/feed'
                                  '\n2.Фізична культура'
+                                 '\nhttps://lms.human.ua/app/group/422258/feed'
                                  '\n3.Всесвітня історія'
+                                 '\nhttps://lms.human.ua/app/group/416072/feed'
                                  '\n4.Фізика'
-                                 '\n5.Математика'
+                                 '\nhttps://lms.human.ua/app/group/422423/feed'
+                                 '\n5.Алгебра'
+                                 '\nhttps://lms.human.ua/app/group/462027/feed'
                                  '\n6.Біологія'
-                                 '\n7.Математика'
+                                 '\nhttps://lms.human.ua/app/group/422456/feed'
+                                 '\n7.Алгебра'
+                                 '\nhttps://lms.human.ua/app/group/462027/feed'
                                  '\n8. - ')
             elif message.text == 'Четвер':
                 bot.send_message(message.chat.id,
                                  '\n1.Громадянська освіта'
+                                 '\nhttps://lms.human.ua/app/group/416078/feed'
                                  '\n2.Фізична культура'
+                                 '\nhttps://lms.human.ua/app/group/422258/feed'
                                  '\n3.Українська література'
+                                 '\nhttps://lms.human.ua/app/group/415855/feed'
                                  '\n4.Зарубіжна література'
-                                 '\n5.Математика'
+                                 '\nhttps://lms.human.ua/app/group/415953/feed'
+                                 '\n5.Алгебра'
+                                 '\nhttps://lms.human.ua/app/group/462027/feed'
                                  '\n6.Захист України'
-                                 '\n7.Математика'
-                                 '\n8. -  ')
+                                 '\nhttps://lms.human.ua/app/group/422263/feed'
+                                 '\n7.Алгебра'
+                                 '\nhttps://lms.human.ua/app/group/462027/feed'
+                                 '\n8.Психологія "Вирішуємо конфлікти 10-А"'
+                                 '\nhttps://lms.human.ua/app/group/473761/feed')
             elif message.text == 'Пятниця':
                 bot.send_message(message.chat.id,
-                                 '\n1.Математика'
+                                 '\n1.Геометрія'
+                                 '\nhttps://lms.human.ua/app/group/462028/feed'
                                  '\n2.Українська мова'
+                                 '\nhttps://lms.human.ua/app/group/415876/feed'
                                  '\n3.Інформатика'
+                                 '\nhttps://lms.human.ua/app/group/422569/feed'
                                  '\n4.Біологія'
+                                 '\nhttps://lms.human.ua/app/group/422456/feed'
                                  '\n5.Громадянська освіта'
+                                 '\nhttps://lms.human.ua/app/group/416078/feed'
                                  '\n6.Фізика'
+                                 '\nhttps://lms.human.ua/app/group/422423/feed'
                                  '\n7.Географія'
-                                 '\n8.Фінансова грамотність')
+                                 '\nhttps://lms.human.ua/app/group/422409/feed'
+                                 '\n8.Фінансова грамотність'
+                                 '\nhttps://lms.human.ua/app/group/422374/feed')
             elif message.text == '⬅️Назад':
                 markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
                 item2 = types.KeyboardButton('Розклад уроків 📝')
