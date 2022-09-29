@@ -143,7 +143,7 @@ def start_command(message):
                 bot.send_message(message.chat.id, '⬅️Назад' , reply_markup = markup)
 
             elif message.text == 'Новини ⚠️':
-                bot.send_message(message.chat.id, '\nОновлення бота: \nДодано посилання до Атласу по географії у пункті "Книжки" ')
+                bot.send_message(message.chat.id, '\nОновлення бота: \nДодані посилання до предметів у пункті "Розклад уроків" ')
 
             if message.text == 'Книжки 📚':
                     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
