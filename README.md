@@ -9,3 +9,7 @@ OR:
 pip3 install -r requirements.txt
 
 And also change your Bot_API in "main.py" file
+
+If you want the bot to restart automatically after each crash, type :
+
+bash keep_running.sh
