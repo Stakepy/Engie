@@ -18,7 +18,7 @@ def start_command(message):
     item2 = types.KeyboardButton('Розклад уроків 📝')
     item3 = types.KeyboardButton('Розклад дзвінків 🛎️')
     item33 = types.KeyboardButton('Книжки 📚')
-    item45 = types.KeyboardButton('Новини ⚠️')
+    item45 = types.KeyboardButton('❗ Новини ⚠️')
     item6 = types.KeyboardButton('/start')
     markup.add(item2, item3, item6, item33, item45 )
     bot.send_message(message.chat.id,
@@ -39,7 +39,7 @@ def start_command(message):
                 back = types.KeyboardButton('⬅️Назад')
                 start2 = types.KeyboardButton('/restart')
                 markup.add(item3, item4, item5, item6, item7, back, start2)
-                bot.send_message(message.chat.id, 'Розклад уроків 📝', reply_markup = markup )
+                bot.send_message(message.chat.id, 'Розклад уроків 📝 \nhttps://lms.human.ua/app/calendar', reply_markup = markup )
             elif message.text == 'Понеділок':
                 bot.send_message(message.chat.id,
                                  '\n1.Година спілкування'
@@ -143,7 +143,10 @@ def start_command(message):
                 bot.send_message(message.chat.id, '⬅️Назад' , reply_markup = markup)
 
             elif message.text == 'Новини ⚠️':
-                bot.send_message(message.chat.id, '\nОновлення бота: \nДодані посилання до предметів у пункті "Розклад уроків" ')
+                bot.send_message(message.chat.id, '\nДоданий збірник задач з хімії у пункті "Книжки".')
+
+            elif message.text == '❗ Новини ⚠️':
+                bot.send_message(message.chat.id, '\nДоданий збірник задач з хімії у пункті "Книжки".')
 
             if message.text == 'Книжки 📚':
                     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -164,9 +167,11 @@ def start_command(message):
                     item22 = types.KeyboardButton('15')
                     item23 = types.KeyboardButton('16')
                     item24 = types.KeyboardButton('17')
+                    item25 = types.KeyboardButton('18')
+                    item26 = types.KeyboardButton('19')
                     back2 = types.KeyboardButton('⬅️  Назад')
                     start2 = types.KeyboardButton('/restart')
-                    markup.add(item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, back2, start2)
+                    markup.add(item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19, item20, item21, item22, item23, item24, item25, item26, back2, start2)
                     bot.send_message(message.chat.id, '\n1.Алгебра ✅'
                                                       '\n2.Англійська мова ✅'
                                                       '\n3.Біологія і Екологія ✅'
@@ -183,8 +188,10 @@ def start_command(message):
                                                       '\n14.Українська мова ✅'
                                                       '\n15.Фізика ✅'
                                                       '\n16.Фінансова грамотність ✅'
-                                                      '\n17.Хімія ✅'
-                                                      '\n18.Географія Атлас - https://new.osvitanet.com.ua/heohrafiia/heohrafiia-10-klas/'
+                                                      '\n17.Фінансова грамотність зошит ✅'
+                                                      '\n18.Хімія ✅'
+                                                      '\n19.Збірник задач з хімії ✅'
+                                                      '\n20.Географія Атлас - https://new.osvitanet.com.ua/heohrafiia/heohrafiia-10-klas/'
                                                       ,
                                      reply_markup=markup)
             elif message.text == '⬅️  Назад':
@@ -261,9 +268,17 @@ def start_command(message):
                     f = file.read()
                     bot.send_document(message.chat.id, open(r'Фінансова грамотність.pdf', 'rb'))
             elif message.text == '17':
+                with open("Фінансова грамотність зошит.pdf", "rb") as file:
+                    f = file.read()
+                    bot.send_document(message.chat.id, open(r'Фінансова грамотність зошит.pdf', 'rb'))
+            elif message.text == '18':
                 with open("Хімія.pdf", "rb") as file:
                     f = file.read()
                     bot.send_document(message.chat.id, open(r'Хімія.pdf', 'rb'))
+            elif message.text == '19':
+                with open("Збірник задач з хімії.pdf", "rb") as file:
+                    f = file.read()
+                    bot.send_document(message.chat.id, open(r'Збірник задач з хімії.pdf', 'rb'))
 
 
 bot.polling(none_stop = True)
